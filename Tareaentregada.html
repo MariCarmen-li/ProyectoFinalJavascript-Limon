@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <title>Vista Tarea entregada</title>
+    <link rel="stylesheet" href="css/estilostarentre.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#buscarBtn').click(function(){
+                var fileName = $('#fileName').val();
+                $.ajax({
+                    type: 'POST',
+                    url: 'search.php',
+                    data: { fileName: fileName },
+                    success: function(response){
+                        $('#resultados').html(response);
+                    }
+                });
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <header>
+        <div class="avatar">
+            <img src="img/avatar.png" alt="Avatar">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Editar Perfil</a></li>
+                <li><a href="#">Ayuda</a></li>
+                <li><a href="#">Cerrar Sesión </a></li>
+                <li><a href="#">Cerrar Sesión </a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="contenedor">
+        <div class="ntarea">
+            <div class="titulo">
+                <h2>Tarea Completada</h2>
+            </div>
+        </div>
+        <div class="tabltarea">
+            <div class="tarea">
+            </div>
+            <div class="solucion">
+                <div class="titulo2">
+                    <h2>Solución Tarea</h2>
+                    <div class="Nota">
+                        <p>Nota: Recuerde que al buscar la tarea, debe finalizar con .pdf </p> 
+                    </div>
+                </div>
+                <div class="download">
+                    <input type="text" id="fileName" placeholder="Nombre del archivo" required>
+                    <button id="buscarBtn">Buscar</button>
+                    <div id="resultados"></div>
+                </div>
+            </div>
+        </div>
+        <div class="butcalificar">
+            <button type="submit" onclick="obtenerCalificacionYComentario()">Agregar Calificación</button>
+            <div id="resultado-calificacion"></div>
+
+        </div>
+        <div class="butpaginicio">
+            <button type="submit" onclick="redirectToPage('tabprofe.html')">Tablero</button>
+        </div>
+
+    </div>
+    </div>
+
+    <script src="./js/main.js"></script>
+    <script src="./js/mainProfesor.js"></script>
+
+</body>
+
+</html>

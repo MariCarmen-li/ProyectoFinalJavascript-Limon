@@ -1,0 +1,101 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f1f1f1;
+    font-family: arial;
+  }
+  
+  .avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    margin-left: 10px;
+  }
+  
+  nav ul li:first-child {
+    margin-left: 0;
+  }
+  
+  nav ul li a {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  nav ul li a:hover {
+    background-color: #555;
+  }
+
+  .contenedor {
+    position: relative;
+    height: 100%;
+    padding: 450px;
+    
+    background-color: burlywood;
+  }
+
+  #leftDiv,
+    #rightDiv {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 45%;
+        padding: 20px;
+        margin: 50px;
+        border: 10px solid burlywood;
+    }
+
+    #leftDiv {
+        left: 0;
+        background-color: #ecf5f8;
+    }
+
+    #rightDiv {
+        right: 0;
+        background-color: #ecf5f8;
+    }
+  
+  .titulo{
+    text-align: center;
+    top: -5px;
+    left: 550px;
+    font-family: arial;
+  } 
+  .sticky-note-left, .sticky-note-right {
+    position: relative;
+    background-color: yellow;
+    padding: 20px;
+    margin-bottom: 20px;
+    height: 100%;
+    width: 80%;
+  }
+
+  .sticky-note-left {
+    background-color: lightblue;
+  }
+
+  .sticky-note-right {
+    background-color: lightgreen;
+  }
+
+  .butnewtarea{
+    position: absolute;
+      bottom: 20px;
+      right: 80px;
+    font-family: arial;
+  }
+
+  .logout-button {
+    position: absolute;
+    bottom: 550px; 
+    right: 60px; 
+  }
+  

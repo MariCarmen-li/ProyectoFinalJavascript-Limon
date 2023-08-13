@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <title>Vista Profesores Creacion Nueva Tarea</title>
+    <link rel="stylesheet" href="css/estilosNuevaTarea.css">
+</head>
+
+<body>
+    <header>
+        <div class="avatar">
+            <img src="img/avatar.png" alt="Avatar">
+          </div>
+          <nav>
+            <ul>
+              <li><a href="#">Editar Perfil</a></li>
+              <li><a href="#">Editar Grupo</a></li>
+              <li><a href="#">Ayuda</a></li>
+              <li><a href="#">Cerrar Sesión </a></li>
+            </ul>
+        </nav>
+      </header>
+      <div class="contenedor">
+            <div class="ntarea">
+                <div class="titulo"> <h2>Nueva Tarea</h2></div>
+            </div>
+            <div class="tabltarea">
+            <div class="tarea">
+                <div class="btnTexto">
+                    <button onclick="openPopup()">Agregar Texto</button>
+                </div>
+                <div id="popup" class="popup">
+                    <div class="popup-content">
+                        <div>Agrega un titulo para la tarea:</div>
+                        <textarea id="titulo" rows="2" cols="50"></textarea>
+                        <div>Descripción:</div>
+                        <textarea id="texto" rows="5" cols="50"></textarea>
+                        <div>Puedes elegir una imagen:</div>
+                        <input type="file" id="imagen" accept="image/jpeg, image/png">
+                        <div>Puedes elegir un archivo PDF:</div>
+                        <input type="file" id="pdf" accept="application/pdf">
+                        <button onclick="addText()">Guardar</button>
+                        <button onclick="closePopup()">Cancelar</button>
+                    </div>
+                  </div>
+                    
+                    <div id="texto-agregado"></div>
+            </div>
+            <div class="matextra">
+                <div class="titulo2"> <h2>Materiales Extra</h2></div>
+            </div>
+            <div id="linkContainer" class="linkm">
+                
+                <ul id="resultado">
+                    <!-- Aquí se mostrarán las URLs agregadas como elementos de lista -->
+                  </ul>
+            </div>
+            <div class="butvinc">
+                <button onclick="agregarLink()">Agregar Vinculo</button>
+            </div>
+        </div>
+        <div class="butcrtarea">
+            <button type="submit" id="CrearT" onclick="enviarValor()" onclick="redirectToPage('tabprofe.html')">Crear Tarea</button>
+        </div>
+      </div>
+    </div>
+
+  <script src="./js/mainProfesor.js"></script>
+</body>
+
+</html>

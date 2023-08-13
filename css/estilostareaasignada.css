@@ -1,0 +1,188 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #f1f1f1;
+  font-family: arial;
+}
+
+.avatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+nav ul li:first-child {
+  margin-left: 0;
+}
+
+nav ul li a {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  background-color: #555;
+}
+
+.contenedor {
+  display: flex;
+  background-color: burlywood;
+  padding: 266px;
+}
+
+.ntarea {
+  width: 1250px; 
+  height: 300px;
+  background-color: white;
+  position: absolute;
+  top: 110px;
+  left: 40px;
+  right: 78px;
+  border-radius: 3px;
+}
+
+.titulo{
+  position: absolute;
+  top: -5px;
+  left: 550px;
+  font-family: arial;
+}
+
+.tabltarea{
+  width: 1100px; 
+  height: 190px;
+  background-color: rgb(138, 211, 224);
+  position: absolute;
+  top: 170px;
+  left: 110px;
+  right: 1px;
+  border-radius: 3px;
+}
+
+ .matextra{
+  width: 1000px; 
+  height: 180px;
+  background-color: white;
+  position: absolute;
+  top: 250px;
+  left: -70px;
+  border-radius: 3px;
+ }
+
+.tarea{
+  font-family: arial;
+}
+
+.titulo2{
+  position: absolute;
+  top: -5px;
+  left: 450px;
+  font-family: arial;
+}
+
+.linkm{
+  position: absolute;
+  top: 300px;
+  left: -10px;
+  font-family: arial;
+}
+
+.butvinc{
+  position: absolute;
+  top: 390px;
+  left: 800px;
+  font-family: arial;
+
+}
+ 
+.butcrtarea{
+  position: absolute;
+  top: 500px;
+  left: 1159px;
+  font-family: arial;
+}
+
+.logout-button {
+  position: absolute;
+  bottom: 550px; 
+  right: 60px; 
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+textarea {
+  display: block;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+#texto-agregado {
+  margin-top: 15px;
+  white-space: pre-wrap;
+}
+
+.btnTexto{
+  position: absolute;
+  top: 210px;
+  left: 1001px;
+  font-family: arial;
+}
+
+.texto-sangria {
+  display: inline-block;
+  margin-left: 20px;
+}
+.texto-sangria2 {
+  display: inline-block;
+  margin-left:15px;
+  font-size: 25px;
+}
+
+.imagen-container {
+  display: flex;
+  justify-content: center;
+}
+
+.imagen-container img {
+  width: 90px;
+  height: 86px;
+}
+
+.hidden {
+  display: none;
+}
+
+.butpaginicio{
+  position: absolute;
+  top: 550px;
+  left: 1200px;
+  font-family: arial;
+}

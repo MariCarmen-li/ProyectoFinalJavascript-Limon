@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <title>Vista Alumnos Tarea</title>
+    <link rel="stylesheet" href="css/estilostarproces.css">
+</head>
+
+<body>
+    <header>
+        <div class="avatar">
+            <img src="img/avatar.png" alt="Avatar">
+          </div>
+          <nav>
+            <ul>
+              <li><a href="#">Editar Perfil</a></li>
+              <li><a href="#">Ayuda</a></li>
+              <li><a href="#">Cerrar Sesión </a></li>
+            </ul>
+        </nav>
+      </header>
+      <div class="contenedor">
+            <div class="ntarea">
+                <div class="titulo"> <h2 id="tarea1"></h2></div>
+            </div>
+            <div class="tabltarea">
+            <div class="tarea">
+                <div class="Nota">
+                    <p>Nota: El nombre del PDF debe de tener Nombre_ApellidoPaterno_TareaXX. &nbsp; Ejemplo : Juan_Perez_Tarea01</p> 
+                </div>
+            </div>
+            <div class="matextra">
+                <div class="titulo2"> <h2>Materiales Extra</h2></div>
+            </div>
+            <div class="linkm">
+            </div>
+        </div>
+        <div class="butpaginicio">
+            <form action="upload.php" method="post" enctype="multipart/form-data">
+                <input type="file" name="pdfFile" required>
+                <input type="text" name="fileName" placeholder="Nombre del archivo" required>
+                <input type="submit" value="Subir archivo" >
+            </form>
+        </div>
+        <div class="tablero">
+            <button type="submit" onclick="redirectToPage('Vistatabalumno.html')">Tablero</button>
+        </div>
+      </div>
+    </div>
+    <script src="./js/main.js"></script>
+    <script src="./js/mainProfesor.js"></script>
+        
+</body>
+
+</html>

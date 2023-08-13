@@ -1,0 +1,115 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f1f1f1;
+    font-family: arial;
+  }
+  
+  .avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    margin-left: 10px;
+  }
+  
+  nav ul li:first-child {
+    margin-left: 0;
+  }
+  
+  nav ul li a {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  nav ul li a:hover {
+    background-color: #555;
+  }
+
+  .contenedor {
+    display: flex;
+    background-color: burlywood;
+    padding: 266px;
+  }
+  
+  .ntarea {
+    width: 1250px; 
+    height: 300px;
+    background-color: white;
+    position: absolute;
+    top: 110px;
+    left: 40px;
+    right: 78px;
+    border-radius: 3px;
+  }
+  
+  .titulo{
+    position: absolute;
+    top: -5px;
+    left: 550px;
+    font-family: arial;
+  }
+
+  .tabltarea{
+    width: 1100px; 
+    height: 190px;
+    background-color: rgb(138, 211, 224);
+    position: absolute;
+    top: 170px;
+    left: 110px;
+    right: 1px;
+    border-radius: 3px;
+  }
+
+   .solucion{
+    width: 1000px; 
+    height: 180px;
+    background-color: white;
+    position: absolute;
+    top: 250px;
+    left: -70px;
+    border-radius: 3px;
+   }
+  
+  .tarea{
+    font-family: arial;
+  }
+
+  .titulo2{
+    position: absolute;
+    top: -5px;
+    left: 450px;
+    font-family: arial;
+  }
+
+  #resultado-calificacion{
+    position: absolute;
+      bottom: 200px;
+      right: 75px;
+      width: 250px;
+      height: 75px;
+      background-color: lightgreen;
+      font-family: arial;
+  }
+
+  .butpaginicio{
+    position: absolute;
+    top: 550px;
+    left: 1500px;
+    font-family: arial;
+  }
+
+  .logout-button {
+    position: absolute;
+    bottom: 550px; 
+    right: 60px; 
+  }
+  

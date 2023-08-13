@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <title>Vista Profesores Vista Tarea Asignada</title>
+    <link rel="stylesheet" href="css/estilostareaasignada.css">
+
+    <script>
+      
+
+      var botonesMostrados = false;
+
+      function mostrarOcultarBotones() {
+          var boton1 = document.getElementById("boton1");
+          var boton2 = document.getElementById("boton2");
+
+          if (!botonesMostrados) {
+              boton1.style.display = "block";
+              boton2.style.display = "block";
+              botonesMostrados = true;
+          } else {
+              boton1.style.display = "none";
+              boton2.style.display = "none";
+              botonesMostrados = false;
+          }
+      }
+
+
+
+    
+        function agregarLink() {
+          // Crear un nuevo elemento de botón
+          var btnAgregar = document.createElement('button');
+          btnAgregar.innerHTML = 'Agregar';
+          
+          // Crear un nuevo campo de texto
+          var urlInput = document.createElement('input');
+          urlInput.type = 'text';
+          urlInput.placeholder = 'Ingrese una URL';
+          
+          // Agregar el botón y el campo de texto al contenedor de links
+          var linkContainer = document.getElementById('linkContainer');
+          linkContainer.appendChild(urlInput);
+          linkContainer.appendChild(btnAgregar);
+          
+          // Asignar el evento clic al botón "Agregar"
+          btnAgregar.addEventListener('click', function() {
+            // Obtener el valor del campo de texto
+            var url = urlInput.value;
+            
+            // Crear un elemento de enlace <a>
+            var enlace = document.createElement('a');
+            enlace.href = url;
+            enlace.innerHTML = url;
+            
+            // Crear un elemento de lista <li>
+            var listItem = document.createElement('li');
+            listItem.appendChild(enlace);
+            
+            // Agregar el elemento de lista al contenedor de resultados
+            var resultado = document.getElementById('resultado');
+            resultado.appendChild(document.createElement('br'));
+            resultado.appendChild(listItem);
+            
+            // Limpiar el campo de texto
+            urlInput.value = '';
+          });
+        }
+
+        function openPopup() {
+    document.getElementById("popup").style.display = "block";
+}
+
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+}
+
+function addText() {
+    var textitulo=document.getElementById("titulo").value;
+    var lineas2=textitulo.split("\n");
+    var textoFormateado2 = lineas2.map(function(linea2) {
+        return "<span class='texto-sangria2'>&nbsp;&nbsp;&nbsp;&nbsp;" + lineas2 + "</span>";
+    }).join("<br><br>");
+    document.getElementById("texto-agregado").innerHTML += textoFormateado2 + "<br><br>";
+
+    var texto = document.getElementById("texto").value;
+    var lineas = texto.split("\n");
+    var textoFormateado = lineas.map(function(linea) {
+        return "<span class='texto-sangria'>&nbsp;&nbsp;&nbsp;&nbsp;" + linea + "</span>";
+    }).join("<br><br>");
+    document.getElementById("texto-agregado").innerHTML += textoFormateado + "<br><br>";
+
+    var imagenInput = document.getElementById("imagen");
+    if (imagenInput.files && imagenInput.files[0]) {
+        var imagen = imagenInput.files[0];
+        var reader = new FileReader();
+        reader.onload = function(e) {
+          var imagenHTML = "<div class='imagen-container'><img src='" + e.target.result + "'></div>";
+          document.getElementById("texto-agregado").innerHTML += imagenHTML + "<br><br>";
+          clearInputFile(imagenInput);
+        };
+        reader.readAsDataURL(imagen);
+    }
+      
+    var pdfInput = document.getElementById("pdf");
+    if (pdfInput.files && pdfInput.files[0]) {
+        var pdf = pdfInput.files[0];
+        var pdfName = escape(pdf.name);
+        var pdfHTML = "<a href='" + URL.createObjectURL(pdf) + "' target='_blank'>" + pdfName + "</a>";
+        document.getElementById("texto-agregado").innerHTML += pdfHTML + "<br><br>";
+        clearInputFile(pdfInput);
+    }
+    document.getElementById("texto").value = "";
+    closePopup();
+  }
+
+      </script>
+
+</head>
+
+<body>
+    <header>
+        <div class="avatar">
+            <img src="img/avatar.png" alt="Avatar">
+          </div>
+          <nav>
+            <ul>
+              <li><a href="#">Editar Perfil</a></li>
+              <li><a href="#">Editar Grupo</a></li>
+              <li><a href="#">Ayuda</a></li>
+              <li><a href="#">Cerrar Sesion </a></li>
+            </ul>
+        </nav>
+      </header>
+      <div class="contenedor">
+            <div class="ntarea">
+                <div class="titulo"> <h2 id="tarea1"></h2></div>
+            </div>
+            <div class="tabltarea">
+              <div class="tarea">
+                  <div class="btnTexto">
+                      
+                      <button id="boton1" class="hidden" onclick="openPopup()">Agregar Texto</button>
+                  </div>
+                  <div id="popup" class="popup">
+                      <div class="popup-content">
+                          <div>Agrega un titulo para la tarea:</div>
+                          <textarea id="titulo" rows="2" cols="50"></textarea>
+                          <div>Descripción:</div>
+                          <textarea id="texto" rows="5" cols="50"></textarea>
+                          <div>Puedes elegir una imagen:</div>
+                          <input type="file" id="imagen" accept="image/jpeg, image/png">
+                          <div>Puedes elegir un archivo PDF:</div>
+                          <input type="file" id="pdf" accept="application/pdf">
+                          <button onclick="addText()">Guardar</button>
+                          <button onclick="closePopup()">Cancelar</button>
+                      </div>
+                    </div>
+                      
+                      <div id="texto-agregado"></div>
+              </div>
+            <div class="matextra">
+                <div class="titulo2"> <h2>Materiales Extra</h2></div>
+            </div>
+            <div id="linkContainer" class="linkm">
+                
+                <ul id="resultado">
+                    <!-- Aquí se mostrarán las URLs agregadas como elementos de lista -->
+                  </ul>
+            </div>
+            <div class="butvinc">
+                <button   id="boton2" class="hidden" onclick="agregarLink()">Agregar Vinculo</button>
+            </div>
+        </div>
+        <div class="butcrtarea">
+          <button id="principal" onclick="mostrarOcultarBotones()">Modificar Tarea/Ocultar</button>
+        </div>
+        <div class="butpaginicio">
+          <button type="submit" onclick="redirectToPage('tabprofe.html')">Guardar</button>
+      </div>
+
+      </div>
+    </div>
+
+  <script src="./js/mainProfesor.js"></script>
+  <script src="./js/main.js"></script>      
+</body>
+
+</html>
